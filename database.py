@@ -9,7 +9,6 @@ load_dotenv()
 app = FastAPI()
 
 SQLALCHEMY_DATABASE_URL = f'postgresql://{os.getenv("DB_USER")}:{os.getenv("DB_PASSWORD")}@localhost/test'
-print(SQLALCHEMY_DATABASE_URL)
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 db_session = scoped_session(sessionmaker(autocommit=False,
